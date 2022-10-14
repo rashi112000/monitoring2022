@@ -1,4 +1,37 @@
 # This is a code for investigating relationships among ecological variables
 # We are using the sp package. To install it, use 
 # install.packages("sp")
-library(sp)
+library(sp) # using library() function to open the file in R
+# require() is same as library
+# We are using meuse for the data set
+# https://cran.r-project.org/web/packages/gstat/vignettes/gstat.pdf
+data(meuse) # using data as a function to acess the data meuse
+# inside parenthesis we put argument: argument is the part of data we want to present
+meuse # putting meuse to access the data inside meuse
+# now using a function to show the data in table, the function is View
+# R is case sensitive
+View(meuse) 
+# if you have a problem with the GI of system, there is a function to solve it: dev.off()
+dev.off()
+# if we don't want to see the whole table, we just want something specific,just the part of object, some rows and columns, we use head()
+head(meuse) # just shows the head/top of the table
+# function showing just the column names: names()
+#names: shows just the names of the object
+names(meuse)
+# summary() used for statistical analysis: mean, median
+summary(meuse)
+# plotting one variable with respect to another( ZINC VS CADMIUM): using function: plot()
+# but we don't have single object but WHOLE data set- they are inside the table
+# need to explain R that zinc and cadmium are linked to meuse
+# using $ to link things together- basically linking cadmium to meuse and zinc to meuse
+plot(meuse$cadmium, meuse$zinc)
+# assigning meuse$cadmium to another object, same with zinc
+cad <- meuse$cadmium
+zin <- meuse$zinc
+plot(cad,zin)
+# attach the table to meuse
+attach(meuse)
+plot(cadmium,zinc)
+#detach
+# pairs: scatterplot matrices
+pairs(meuse)

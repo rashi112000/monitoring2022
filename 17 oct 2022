@@ -1,0 +1,11 @@
+# we are recalling what we did in the previous lecture- today is 17 Oct 2022
+library(sp)
+data(meuse)
+meuse # whole data appears 
+head(meuse) # only the heading appears
+summary(meuse) #we get mean, median, mode
+plot(cadmium,zinc) # To plot, we can do this but we cannot do ti as it is not linked with meuse
+# so to link we use dollar sign $
+plot(meuse$cadmium, meuse$zinc)
+#to change colors, we use the argument col
+plot(cadmium,zinc, col='red') # to increase the size: cex=''

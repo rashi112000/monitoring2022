@@ -25,7 +25,7 @@ summary(meuse)
 # need to explain R that zinc and cadmium are linked to meuse
 # using $ to link things together- basically linking cadmium to meuse and zinc to meuse
 plot(meuse$cadmium, meuse$zinc)
-# assigning meuse$cadmium to another object, same with zinc
+# assigning meuse$cadmium to another object, same with zinc # to assign we use '<-'
 cad <- meuse$cadmium
 zin <- meuse$zinc
 plot(cad,zin)
@@ -36,7 +36,7 @@ plot(cadmium,zinc)
 # pairs: scatterplot matrices
 pairs(meuse)
 plot(cad,zinc, col='blue', cex=3)
-#selecting the columns from cadmium to zinc that means from column 3 to 6 3:6
+#selecting the columns from cadmium to zinc that means from column 3 to 6- 3:6
 pairs(meuse[,3:6]) # idk how to put these parenthesis- find out 
 pol <- meuse[,3:6] # subsetted meuse and created a new object called pol
 head(pol) # just to see the head of pol
@@ -47,3 +47,9 @@ pairs(~ cadmium+copper+lead+zinc, data= meuse) # seperating the variabls to be p
 # '~' tilde is used to clump all the variables together
 pairs(~ cadmium+copper+lead+zinc, data= meuse, col='yellow') # changing color to yellow
 pairs(~ cadmium+copper+lead+zinc, data= meuse, col='coral')
+#ANOTHER KIND OF PAIRING
+# correlation coefficient- 1/-1
+#panel.correlations<- function()
+#panel.smoothing to make some space between them 
+#panel.histograms- function is 'hist'
+

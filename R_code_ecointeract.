@@ -53,3 +53,15 @@ pairs(~ cadmium+copper+lead+zinc, data= meuse, col='coral')
 #panel.smoothing to make some space between them 
 #panel.histograms- function is 'hist'
 
+
+#NOW USING R SPACIAL CODE FROM VIRTUALE TO craete a sptial plot
+library(sp)
+data(meuse)
+head(meuse)
+coordinates(meuse)=~x+y
+plot(meuse)
+# spplot is used to plot elements like zinc, lead spread in space
+spplot(meuse, "zinc", main= "my graph") # main is the title of the plot,  quotes are used in spplot especially with main
+spplot(meuse, c("zinc","copper", "lead")) # we are putting c before the zinc,copper and lead as it will become an array once we increase the no. of variants
+# now using bubble function- change in size of the bubble to depict the changes in the variables- it is a replacement for spplot
+bubble(meuse, "zinc", main= "my graph") # bubble doesn't work with array 

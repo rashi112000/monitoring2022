@@ -35,3 +35,15 @@ plot(cadmium,zinc)
 #detach
 # pairs: scatterplot matrices
 pairs(meuse)
+plot(cad,zinc, col='blue', cex=3)
+#selecting the columns from cadmium to zinc that means from column 3 to 6 3:6
+pairs(meuse[,3:6]) # idk how to put these parenthesis- find out 
+pol <- meuse[,3:6] # subsetted meuse and created a new object called pol
+head(pol) # just to see the head of pol
+# now lets make pairs in pol
+pairs(pol, col='coral', cex=2)
+# another way pairing ahead!! 
+pairs(~ cadmium+copper+lead+zinc, data= meuse) # seperating the variabls to be paired are seperated with a plus "+" sign
+# '~' tilde is used to clump all the variables together
+pairs(~ cadmium+copper+lead+zinc, data= meuse, col='yellow') # changing color to yellow
+pairs(~ cadmium+copper+lead+zinc, data= meuse, col='coral')

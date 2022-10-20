@@ -65,3 +65,7 @@ spplot(meuse, "zinc", main= "my graph") # main is the title of the plot,  quotes
 spplot(meuse, c("zinc","copper", "lead")) # we are putting c before the zinc,copper and lead as it will become an array once we increase the no. of variants
 # now using bubble function- change in size of the bubble to depict the changes in the variables- it is a replacement for spplot
 bubble(meuse, "zinc", main= "my graph") # bubble doesn't work with array 
+
+
+
+

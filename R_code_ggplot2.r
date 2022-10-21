@@ -1,5 +1,5 @@
 # Rcode for ggplot2 based graphs
-library("ggplot2")
+library(ggplot2) # quotes are not to be used with library, quotes only to be  used when we move out of R, Use a text or color
 library(ggplot2)
 # ecological dataframe 
 virus <- c(10, 30, 40, 50, 60, 80)
@@ -33,6 +33,26 @@ ggplot(d, aes(x=virus, y=death)) + geom_polygon()
 install.packages("spatstat")
 
 
-
-
-
+# 21 OCTOBER 2022
+# importing files
+# we make a folder in our laptops, NOT on desktop- make it on C or D drive in order to have shortest path
+# creating folder called Lab- download file from virtuale- save it in lab folder
+# setwd()- set (something) wd- working directory
+# Let's make our own data from outside R
+# we will explain to R the path of our directory
+setwd("C:/Lab/") # setwd for Windows # setwd("C:/lab/")
+# if you get "+" in en error it means you have not closed the path yet
+# the function to read the file is read.table("file", header= FALSE/TREU, sep="" )
+# file- name of the file, here it is covid--
+# header meaning cloumns having names
+# sep meaning seperator- a symbols existing which seperates the colummns
+read.table("covid_agg.csv")
+covid <- read.table("covid_agg.csv", header= TRUE) # if we don't put headers, R cannot read the headings and puts variables against them
+head(covid)
+covid <- read.table("covid_agg.csv", header= T) # True can be repalced with "T" and header with "head"
+summary(covid)
+#now making a plot of the points
+#ggplot(data="", aes=x and y)
+ggplot(covid, aes(x=lon, y=lat)) + geom_point(col="blue", size=3)
+ggplot(covid, aes(x=lon, y=lat, size=cases)) + geom_point(col="red") # can change the size of variables to "cases"  as it is numerical and we are not setting the size
+ggplot(covid, aes(x=lon, y=lat, size=cases)) + geom_point(col="blue", pch=8)

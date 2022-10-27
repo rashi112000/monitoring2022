@@ -40,6 +40,6 @@ cl <- colorRampPalette(c("pink", "green", "blue")) (500)
 plot(density_map, col=cl)
 points(covid_planar, pch=8)
 
-cl <- colorRampPalette(c("deeppink1", "green", "blue")) (500)
+cl <- colorRampPalette(c("deeppink1", "green", "blue")) (1000)
 plot(density_map, col=cl)
 points(covid_planar, pch=8)

@@ -23,6 +23,28 @@ plot(multivar)
 attach(biomes_types) # using this table that is why we need to attach
 # now we are using ordiellipse(), basically making an ellipse of all the similar plots in the same biomes under that ellipse
 # ordiellipse(multivar, type, col=c("black","red","green","blue"), kind = "ehull", lwd=3)
-# type of ellipse, this argument tells that we are plotting different columns and
+# type is basically into biomes_types- WHICH column will have ellipses, so the column is listed as type in the biomes_types data, type of ellipse, this argument tells that we are plotting different columns and
 # lwd is line width
 ordiellipse(multivar, type, col=c("black", "coral", "blue", "green"), kind="ehull", lwd=3)
+# correspondense among different organisms with the help of decorana()
+# recalling what we did yesterday
+multivar <- decorana(biomes)
+multivar
+plot(multivar)
+attach(biomes_types)
+ordiellipse(multivar, type, col=c("black", "coral", "blue", "green"), kind="ehull", lwd=3)
+# now are going to name these biomes who are in ellipses
+# the function we are using is ordispider()- similar to ordiellipse
+ordispider(multivar, type, col=c("black","coral","blue","green"), label = T)
+# how to export the data, we do this using pdf() function
+# saving the graph out of R
+pdf("multivaranalysis.pdf") # need to put everything inside the pdf, the whole plot
+plot(multivar)
+ordiellipse(multivar, type, col=c("black", "coral", "blue", "green"), kind="ehull", lwd=3)
+ordispider(multivar, type, col=c("black","coral","blue","green"), label = T)  # now we are closng the pdf with all the things inside using dev.off() funtion
+dev.off() 
+
+# exercise
+pdf("abc.pdf") # double quotes are important since we are exposrting it from R
+plot(multivar)
+dev.off()

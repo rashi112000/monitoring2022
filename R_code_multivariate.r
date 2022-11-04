@@ -42,7 +42,7 @@ pdf("multivaranalysis.pdf") # need to put everything inside the pdf, the whole p
 plot(multivar)
 ordiellipse(multivar, type, col=c("black", "coral", "blue", "green"), kind="ehull", lwd=3)
 ordispider(multivar, type, col=c("black","coral","blue","green"), label = T)  # now we are closng the pdf with all the things inside using dev.off() funtion
-dev.off() 
+dev.off() # it will be saved in Lab folder
 
 # exercise
 pdf("abc.pdf") # double quotes are important since we are exposrting it from R

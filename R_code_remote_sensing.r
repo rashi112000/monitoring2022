@@ -17,3 +17,17 @@ plot(p224r63_2011)
 # the error where you have no error but the system closes, you can use the function dev.off(), it will close the plot and rthen you can plot it again
 cl <- colorRampPalette(c("black", "grey", "light grey")) (200) # the white part means it has no data
 plot(p224r63_2011, col=cl)
+# we now want to use only one layer of the whole brick
+# plotting one band
+# solution 1
+plot(p224r63_2011$B1_sre, col=cl) # "$" this sign we are using to connect the data and "B1_sre" is the layer we are linking
+# solution 2
+plot(p224r63_2011[[1]], col=cl) # instead of $ we used "[[]]" and we did not put the name of the element
+cl <- colorRampPalette(c("brown", "pink", "yellow")) (500)
+plot(p224r63_2011[[1]], col=cl)
+
+# we are now plotting two images gainst each other, basically multiframe
+par(mfrow=c(1,2)) # we will explain the row and column to it, 1 signifies row and 2 signifies column  # in practice it will do nothing
+# plotting element 1 and 2 against each other
+plot(p224r63_2011[[1]], col=cl)
+plot(p224r63_2011[[2]], col=cl)

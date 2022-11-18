@@ -26,3 +26,33 @@ par(mfrow=c(2,1))
 plotRGB(p224r63_1988, r=3, g=2, b=4, stretch="lin")
 plotRGB(p224r63_2011, r=3, g=2, b=4, stretch="lin")
 
+# Multi-temporal analysis
+# basically comparing one layer/band= color band of information from one year to another
+# difference in the reflectance can help us understand thesituation better
+# for eg: if reflectance from some point in year 1988 (assumed) is reduced, it means that the tree has been cut- deforestation
+
+# calculating the diffrence between images 
+
+# THE MULTI- TEMPORAL ANAYLSIS
+difnir <- p224r63_1988[[4]] - p224r63_2011[[4]]  # difference in the near-infrared=difnir (DON'T FORGET THE FOURTH BAND IS INREARED BAND WHICH MEANS B4)
+cla <- colorRampPalette(c("orange", "yellow", "black")) (100)
+plot(difnir, col=cla)
+
+# DVI= Difference Vegetation Index (based on 2 bands- red and near infra-red)
+# red is being absorbed for photosythesis while near infrared is being reflected maximum
+# usually the difference between the two in a healthy plant would be higher
+
+# if the plant is suffering, the value of red will increase and the value of infrared would decrease
+
+# LET US CALCULATE THE DVI
+# DVI (2011)
+dvi2011 <- p224r63_2011[[4]]- p224r63_2011[[3]]
+plot(dvi2011) # pure water in near infrared will have complete absorption
+dvi1988 <- p224r63_1988[[4]]- p224r63_1988[[3]]
+plot(dvi1988)
+
+# plot the difference between the dvi of both years
+# if DVI is lower, that implies the vegetation is not healthy or is cut
+difdvi <- dvi1988-dvi2011
+clu <- colorRampPalette(c("blue", "white", "red")) (100)
+plot(difdvi, col=clu) # red part in the plot signifies that the vegetation there is affected and is not healthy or soemthing

@@ -90,8 +90,8 @@ ggRGB(l1992,1,2,3)
 dvi1992 <- l1992[[1]]- l1992[[2]]
 plot(dvi1992)
 
-ggplot() + geom_raster(dvi1992, mapping=aes(x=x, y=y, fill=layer)) # fill=layer, we used dvi1992 to see the name of the layer we want to plot and the name of the layer here is layer
-
+ggplot() + geom_raster(dvi1992, mapping=aes(x=x, y=y, fill=layer)) 
+# fill=layer, we used dvi1992 to see the name of the layer we want to plot and the name of the layer here is layer
 
 # using a package so that colorblind people can understand 
 install.packages("viridis")

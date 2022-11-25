@@ -96,7 +96,18 @@ ggplot() + geom_raster(dvi1992, mapping=aes(x=x, y=y, fill=layer)) # fill=layer,
 # using a package so that colorblind people can understand 
 install.packages("viridis")
 library(viridis)
-scale_fill_viridis(option="magma")
+ggplot() + geom_raster(dvi1992, mapping=aes(x=x, y=y, fill=layer)) + scale_fill_viridis(option="magma")
+
 # error <ScaleContinuous>
  Range:  
  Limits:    0 --    1
+
+# this error was coming because viridis could not recognise the previous plot, so you write the whole again
+
+# EXERCISE
+
+p1 <- ggplot() + geom_raster(dvi1992, mapping=aes(x=x, y=y, fill=layer)) + scale_fill_viridis(option="magma")
+p2 <- ggplot() + geom_raster(dvi2006, mapping=aes(x=x, y=y, fill=layer)) + scale_fill_viridis(option="cividis")
+
+p1 + p2
+

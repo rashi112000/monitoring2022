@@ -99,8 +99,8 @@ library(viridis)
 ggplot() + geom_raster(dvi1992, mapping=aes(x=x, y=y, fill=layer)) + scale_fill_viridis(option="magma")
 
 # error <ScaleContinuous>
- Range:  
- Limits:    0 --    1
+ # Range:  
+ # Limits:    0 --    1
 
 # this error was coming because viridis could not recognise the previous plot, so you write the whole again
 

@@ -1,0 +1,10 @@
+documentclass tells the type of document 
+usepackage is equivalent to library() in R
+every command is preceeded by \
+\noindent fucntion is used to remove the indent when we move to the next line
+\subsection to create more sections
+put *\subsection- it will remove the numbers 
+\ref
+items in bibliography are called bib items
+\usepackage{hyperref}
+\usepackage{natbib}

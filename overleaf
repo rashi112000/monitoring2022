@@ -9,3 +9,5 @@ items in bibliography are called bib items
 \usepackage{hyperref}
 \usepackage{natbib}
 % this is used to comment here
+documentclass for presentation is beamer
+\\ used for a new line 

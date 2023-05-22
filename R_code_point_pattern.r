@@ -2,7 +2,7 @@
 # importing the data 
 # use of working data
 setwd("C:/lab/")
-# now we will resd the table
+# now we will read the table
 read.table("covid_agg.csv")
 covid <- read.table("covid_agg.csv", header=T) #putting header True so that it reads the heading
 head(covid)
